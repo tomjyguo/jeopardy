@@ -20,52 +20,24 @@
         {% endfor %}
     </div>
 
-    <div id="question-modal" style="display: none;">
-        <p id="question-text"></p>
-        <input type="text" id="answer-input" placeholder="Your answer">
-        <button id="submit-answer">Submit</button>
+    <div class="team-scores">
+        <div class="team">
+            <h2>Team 1</h2>
+            <label for="team1-score">Score:</label>
+            <input type="number" id="team1-score" value="0" step="100">
+        </div>
+
+        <div class="team">
+            <h2>Team 2</h2>
+            <label for="team2-score">Score:</label>
+            <input type="number" id="team2-score" value="0" step="100">
+        </div>
+
+        <div class="team">
+            <h2>Team 3</h2>
+            <label for="team3-score">Score:</label>
+            <input type="number" id="team3-score" value="0" step="100">
+        </div>
     </div>
-
-    <script type="text/javascript">
-        const questions = JSON.parse('{{ questions|tojson }}');
-
-        const questionButtons = document.querySelectorAll('.question');
-        let currentCategory = '';
-        let currentIndex = 0;
-
-        questionButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                currentCategory = this.dataset.category;
-                currentIndex = this.dataset.index;
-
-                const questionText = questions[currentCategory][currentIndex].question;
-                document.getElementById('question-text').textContent = questionText;
-                
-                document.getElementById('question-modal').style.display = 'block';
-            });
-        });
-
-        document.getElementById('submit-answer').addEventListener('click', function() {
-            const answer = document.getElementById('answer-input').value;
-            fetch('/check_answer', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    category: currentCategory,
-                    question_index: currentIndex,
-                    answer: answer
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.correct) {
-                    alert('Correct!');
-                } else {
-                    alert('Wrong! The correct answer was: ' + data.correct_answer);
-                }
-                document.getElementById('question-modal').style.display = 'none';
-            });
-        });
-    </script>
 </body>
 </html>
