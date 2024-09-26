@@ -6,15 +6,30 @@
     <title>{{ category }} Question</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body>
-    <h1>{{ category }}</h1>
-    <div id="question-container">
-        <p>{{ question['question'] }}</p>
+<question-body>
+    <div class="question-page">
+        <a href="/" class="back-link">&#8678;</a>
+        <h1 class="category-title">{{ category }}</h1>
+        <div id="question-container">
+            <p class="question-text">{{ question['question'] }}</p>
+            <img src="{{ url_for('static', filename='images/questionimage' ~ category_number ~ question_number ~ '.jpg') }}" 
+                 alt=""
+                 class="question-image">
+        </div>
+        <button id="reveal-answer-button">Reveal Answer</button>
+        <div id="answer-section" style="display: none;">
+            <p class="answer-text">{{ question['answer'] }}</p>
+        </div>
     </div>
-    <form method="POST">
-        <input type="text" id="answer-input" placeholder="Your answer...">
-        <button type="submit" id="submit-answer">Submit</button>
-    </form>
-    <a href="/">Back to board</a>
-</body>
+    <script>
+        document.getElementById('reveal-answer-button').addEventListener('click', function() {
+            var answerSection = document.getElementById('answer-section');
+            if (answerSection.style.display === 'none') {
+                answerSection.style.display = 'block';
+            } else {
+                answerSection.style.display = 'none';
+            }
+        });
+    </script>
+</question-body>
 </html>
