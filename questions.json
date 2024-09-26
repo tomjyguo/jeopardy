@@ -1,37 +1,37 @@
 {
     "Category 1": [
-        {"question": "This is a sample question 1", "answer": "Sample Answer 1", "value": 100},
-        {"question": "This is a sample question 2", "answer": "Sample Answer 2", "value": 200},
-        {"question": "This is a sample question 3", "answer": "Sample Answer 3", "value": 300},
-        {"question": "This is a sample question 4", "answer": "Sample Answer 4", "value": 400},
-        {"question": "This is a sample question 5", "answer": "Sample Answer 5", "value": 500}
+        {"question": "This is a sample question 1", "answer": "Sample Answer 1", "value": 100, "opened":false},
+        {"question": "This is a sample question 2", "answer": "Sample Answer 2", "value": 200, "opened":false},
+        {"question": "This is a sample question 3", "answer": "Sample Answer 3", "value": 300, "opened":false},
+        {"question": "This is a sample question 4", "answer": "Sample Answer 4", "value": 400, "opened":false},
+        {"question": "This is a sample question 5", "answer": "Sample Answer 5", "value": 500, "opened":false}
     ],
     "Category 2": [
-        {"question": "This is a sample question 1", "answer": "Sample Answer 1", "value": 100},
-        {"question": "This is a sample question 2", "answer": "Sample Answer 2", "value": 200},
-        {"question": "This is a sample question 3", "answer": "Sample Answer 3", "value": 300},
-        {"question": "This is a sample question 4", "answer": "Sample Answer 4", "value": 400},
-        {"question": "This is a sample question 5", "answer": "Sample Answer 5", "value": 500}
+        {"question": "This is a sample question 1", "answer": "Sample Answer 1", "value": 100, "opened":false},
+        {"question": "This is a sample question 2", "answer": "Sample Answer 2", "value": 200, "opened":false},
+        {"question": "This is a sample question 3", "answer": "Sample Answer 3", "value": 300, "opened":false},
+        {"question": "This is a sample question 4", "answer": "Sample Answer 4", "value": 400, "opened":false},
+        {"question": "This is a sample question 5", "answer": "Sample Answer 5", "value": 500, "opened":false}
     ],
     "Category 3": [
-        {"question": "This is a sample question 1", "answer": "Sample Answer 1", "value": 100},
-        {"question": "This is a sample question 2", "answer": "Sample Answer 2", "value": 200},
-        {"question": "This is a sample question 3", "answer": "Sample Answer 3", "value": 300},
-        {"question": "This is a sample question 4", "answer": "Sample Answer 4", "value": 400},
-        {"question": "This is a sample question 5", "answer": "Sample Answer 5", "value": 500}
+        {"question": "This is a sample question 1", "answer": "Sample Answer 1", "value": 100, "opened":false},
+        {"question": "This is a sample question 2", "answer": "Sample Answer 2", "value": 200, "opened":false},
+        {"question": "This is a sample question 3", "answer": "Sample Answer 3", "value": 300, "opened":false},
+        {"question": "This is a sample question 4", "answer": "Sample Answer 4", "value": 400, "opened":false},
+        {"question": "This is a sample question 5", "answer": "Sample Answer 5", "value": 500, "opened":false}
     ],
     "Category 4": [
-        {"question": "This is a sample question 1", "answer": "Sample Answer 1", "value": 100},
-        {"question": "This is a sample question 2", "answer": "Sample Answer 2", "value": 200},
-        {"question": "This is a sample question 3", "answer": "Sample Answer 3", "value": 300},
-        {"question": "This is a sample question 4", "answer": "Sample Answer 4", "value": 400},
-        {"question": "This is a sample question 5", "answer": "Sample Answer 5", "value": 500}
+        {"question": "This is a sample question 1", "answer": "Sample Answer 1", "value": 100, "opened":false},
+        {"question": "This is a sample question 2", "answer": "Sample Answer 2", "value": 200, "opened":false},
+        {"question": "This is a sample question 3", "answer": "Sample Answer 3", "value": 300, "opened":false},
+        {"question": "This is a sample question 4", "answer": "Sample Answer 4", "value": 400, "opened":false},
+        {"question": "This is a sample question 5", "answer": "Sample Answer 5", "value": 500, "opened":false}
     ],
     "Category 5": [
-        {"question": "This is a sample question 1", "answer": "Sample Answer 1", "value": 100},
-        {"question": "This is a sample question 2", "answer": "Sample Answer 2", "value": 200},
-        {"question": "This is a sample question 3", "answer": "Sample Answer 3", "value": 300},
-        {"question": "This is a sample question 4", "answer": "Sample Answer 4", "value": 400},
-        {"question": "This is a sample question 5", "answer": "Sample Answer 5", "value": 500}
+        {"question": "This is a sample question 1", "answer": "Sample Answer 1", "value": 100, "opened":false},
+        {"question": "This is a sample question 2", "answer": "Sample Answer 2", "value": 200, "opened":false},
+        {"question": "This is a sample question 3", "answer": "Sample Answer 3", "value": 300, "opened":false},
+        {"question": "This is a sample question 4", "answer": "Sample Answer 4", "value": 400, "opened":false},
+        {"question": "This is a sample question 5", "answer": "Sample Answer 5", "value": 500, "opened":false}
     ]
 }

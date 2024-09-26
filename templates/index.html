@@ -4,40 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeopardy Game</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Jeopardy!</h1>
-
     <div class="board">
         {% for category, questions in questions.items() %}
         <div class="category">
             <h2>{{ category }}</h2>
             {% for question in questions %}
-            <a class="question" href="/question/{{ category }}/{{ loop.index0 }}">{{ question['value'] }}</a>
+            {% if not question['opened'] %}
+            <a class="question" href="/question/{{ category }}/{{ loop.index0 }}"
+               onclick="markAsOpened('{{ category }}', '{{ loop.index0 }}');">
+                {{ question['value'] }}
+            </a>
+            {% else %}
+            <a class="question opened">{{ question['value'] }}</a>
+            {% endif %}
             {% endfor %}
         </div>
         {% endfor %}
     </div>
-
     <div class="team-scores">
         <div class="team">
             <h2>Team 1</h2>
             <label for="team1-score">Score:</label>
             <input type="number" id="team1-score" value="0" step="100">
         </div>
-
         <div class="team">
             <h2>Team 2</h2>
             <label for="team2-score">Score:</label>
             <input type="number" id="team2-score" value="0" step="100">
         </div>
-
         <div class="team">
             <h2>Team 3</h2>
             <label for="team3-score">Score:</label>
             <input type="number" id="team3-score" value="0" step="100">
         </div>
     </div>
+
+    <script>
+        function markAsOpened(category, questionIndex) {
+            fetch(`/mark_opened/${category}/${questionIndex}`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Optionally, you can also reload the page or update the UI here
+                        // window.location.reload(); // Uncomment this line if you want to reload the page
+                    }
+                });
+        }
+    </script>
 </body>
 </html>

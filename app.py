@@ -13,14 +13,18 @@ def home():
 @app.route('/question/<category>/<int:question_index>')
 def show_question(category, question_index):
     question = QUESTIONS.get(category)[question_index]
-    return render_template('question-page.html', category=category, question=question)
+    category_number = list(QUESTIONS.keys()).index(category) + 1
+    question_number = question_index + 1
+    return render_template('question-page.html', 
+                           category=category, 
+                           question=question, 
+                           category_number=category_number, 
+                           question_number=question_number)
 
-@app.route('/check_answer', methods=['POST'])
-def check_answer():
-    data = request.json
-    correct_answer = QUESTIONS[data['category']][data['question_index']]['answer']
-    is_correct = data['answer'].lower() == correct_answer.lower()
-    return jsonify({"correct": is_correct, "correct_answer": correct_answer})
+@app.route('/mark_opened/<category>/<int:question_index>', methods=['POST'])
+def mark_as_opened(category, question_index):
+    QUESTIONS[category][question_index]['opened'] = True
+    return jsonify(success=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
